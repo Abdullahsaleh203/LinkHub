@@ -10,7 +10,7 @@
                 </p>
 
                 <p class="font-bold">
-                    Don't have an account? <<RouterLink to="signup" class="underline">Click here</RouterLink> to Make NEW ONE!
+                    Don't have an account? <RouterLink to="signup" class="underline">Click here</RouterLink> to Make NEW ONE!
                 </p>
             </div>
         </div>
