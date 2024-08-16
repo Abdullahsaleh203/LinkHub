@@ -1,13 +1,38 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import SignupView from '../views/SignupView.vue'
+import SigninView from '../views/SigninView.vue'
+import FeedView from '@/views/FeedView.vue'
+import ChatView from '../views/ChatView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/signin',
+      name: 'signin',
+      component: SigninView
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignupView
+    },
+    {
+      path: '/feed',
+      name: 'feed',
+      component: FeedView
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: ChatView
     },
     {
       path: '/about',
