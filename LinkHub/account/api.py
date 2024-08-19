@@ -1,15 +1,15 @@
 from django.http import JsonResponse
 from rest_framework.decorators import  permission_classes, authentication_classes ,api_view
-from . forms import SingupForm
+from . forms import SignupForm
 
 @api_view(['POST'])
 @authentication_classes([])
 @permission_classes([])
-def singup(request):
+def signup(request):
     data = request.data
     message = f"Hello, {data['user']}! Your account has been created."
 
-    form = SingupForm({
+    form = SignupForm({
         'email':data.get('email'),
         'name':data.get('name'),
         'password1':data.get('password1'),
@@ -21,4 +21,5 @@ def singup(request):
         # Send verification email later
     else:
         message = "Error: Account could not be created."
-    return JsonResponse({'staus': message})
+        
+    return JsonResponse({'status': message})
