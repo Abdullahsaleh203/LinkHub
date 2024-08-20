@@ -21,7 +21,6 @@
         <div class="main-center col-span-3 space-y-4">
             <div class="bg-white border border-gray-200 rounded-lg">
                 <div class="flex flex-col flex-grow p-4">
-                    <template>
                         <div class="flex w-full mt-2 space-x-3 max-w-md ml-auto justify-end">
                             <div>
                                 <div class="bg-blue-600 text-white p-3 rounded-l-lg rounded-br-lg">
@@ -30,24 +29,23 @@
                                 <span class="text-xs text-gray-500 leading-none">time of message ago</span>
                             </div>
                             <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300">
-                                <img src="http://i.pravatar.cc/300?img=80" class="w-[40px] rounded-full">
+                                <img src="http://i.pravatar.cc/300?img=20" class="w-[40px] rounded-full">
 
                             </div>
                         </div>
 
                         <div class="flex w-full mt-2 space-x-3 max-w-md">
                             <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300">
-                                <img src="http://i.pravatar.cc/300?img=90" class="w-[40px] rounded-full">
+                                <img src="http://i.pravatar.cc/300?img=40" class="w-[40px] rounded-full">
 
                             </div>
                             <div>
                                 <div class="bg-gray-300 p-3 rounded-r-lg rounded-bl-lg">
-                                    <p class="text-sm">body</p>
+                                    <p class="text-sm">body of responsing messages</p>
                                 </div>
                                 <span class="text-xs text-gray-500 leading-none">time ago</span>
                             </div>
                         </div>
-                    </template>
                 </div>
             </div>
 
