@@ -33,4 +33,4 @@ def signup(request):
     else:
         message = "Error: Account could not be created."
         
-    return JsonResponse({'status': message})
+    return JsonResponse({'message': message})
