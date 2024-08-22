@@ -24,7 +24,14 @@ class CustomUserManager(UserManager):
     def create_superuser(self, name=None, email=None, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
+        
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff=True.')
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser must have is_superuser=True.')
+
         return self._create_user(name, email, password, **extra_fields)
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -33,9 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     avatar = models.ImageField(upload_to='avatars', blank=True, null=True)
     friends = models.ManyToManyField('self')
     friends_count = models.IntegerField(default=0)
-
     people_you_may_know = models.ManyToManyField('self')
-
     posts_count = models.IntegerField(default=0)
 
     is_active = models.BooleanField(default=True)
@@ -49,4 +54,5 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['name']  
+
