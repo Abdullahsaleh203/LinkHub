@@ -12,7 +12,6 @@ def post_list(request):
 
 @api_view(['POST'])
 def post_create(request):
-    # data = request.data
     form = PostForm(request.data)
     if form.is_valid():
         post = form.save(commit=False)
