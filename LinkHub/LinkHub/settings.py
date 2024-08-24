@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'essential',
     'account',
     'post',
+    'search',
 ]
 
 MIDDLEWARE = [
