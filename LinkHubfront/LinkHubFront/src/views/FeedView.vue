@@ -100,7 +100,7 @@
         </div>
 
         <div class="main-right col-span-1 space-y-4">
-           <PeopleYouMayKnow />
+           <useToastStore />
 
            <Trends />
         </div>
@@ -108,12 +108,12 @@
 </template>
 
 <script>
-import PeopleYouMayKnow from '../components/PeopleYouMayknow.vue'
+import useToastStore from '../components/Toast.vue'
 import Trends from '../components/Trends.vue'
 export default {
     name: 'FeedView',
     components: {
-        PeopleYouMayKnow,
+        useToastStore,
         Trends
     }
 }
