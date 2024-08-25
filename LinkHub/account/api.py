@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from rest_framework.decorators import  permission_classes, authentication_classes ,api_view 
-from . forms import SignupForm
+from .forms import SignupForm
 
 from .models import  User, FriendshipRequest
 from .serializers import UserSerializer , FriendshipRequestSerializer
