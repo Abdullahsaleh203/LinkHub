@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from rest_framework.decorators import  permission_classes, authentication_classes ,api_view 
-from . forms import SignupForm
+from .forms import SignupForm
 
 
 
@@ -33,4 +33,4 @@ def signup(request):
     else:
         message = "Error: Account could not be created."
         
-    return JsonResponse({'message': message})
+    return JsonResponse({'status': message})
