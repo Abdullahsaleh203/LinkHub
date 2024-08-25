@@ -1,6 +1,6 @@
 <template> 
     <nav class="py-10 px-8 border-b border-gray-200">
-        <div class="max-w-7x1 z-10 flex relative mx-auto">
+        <div class="max-w-7x1 mx-auto">
             <div class="flex items-center justify-between">
                 <div class="menu-left flex">
                     <a href="#" class="purple-700">

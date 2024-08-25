@@ -132,32 +132,7 @@
                 </div>
             </div>
         <div class="main-right col-span-1 space-y-4">
-            <PeopleYouMayKnow/>
-            <div class="main-right col-span-1 space-y-4">
-            <div class="p-4 bg-white border border-gray-200 rounded-lg">
-                <h3 class="mb-6 text-xl">friends You May Know</h3>
-
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <img src="http://i.pravatar.cc/300?img=20" class="w-[40px] rounded-full">
-
-                            <p class="text-xs"><strong>Live With Your Community</strong></p>
-                        </div>
-                            <a href="#" class="py-2 px-3 bg-purple-600 text-white text-xs rounded-leg">show</a>
-                    </div>
-                    
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <img src="http://i.pravatar.cc/300?img=60" class="w-[40px] rounded-full">
-
-                            <p class="text-xs"><strong>Live With Your Community</strong></p>
-                        </div>
-
-                        <a href="#" class="py-2 px-3 bg-purple-600 text-white text-xs rounded-leg">show</a>
-                    </div>
-                </div>
-            </div>
+            <PeopleYouMayKnow />
         
          <Trends />
         </div>
@@ -165,12 +140,16 @@
 </template>
 
 <script>
-import PeopleYouMayKnow from '../components/PeopleYouMayknow.vue'
+import PeopleYouMayKnow from '../components/PeopleYouMayKnow.vue'
+import useToastStore  from '../components/Toast.vue'
 import Trends from '../components/Trends.vue'
+
 export default {
     name: 'SearchView',
+
     components: {
         PeopleYouMayKnow,
+        useToastStore ,
         Trends,
     }
 }
