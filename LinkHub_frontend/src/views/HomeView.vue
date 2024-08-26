@@ -1,9 +1,6 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
   <main>
-    <h1>welllllll</h1>
+    <h1 class="text-emmm-200">Welcom To Your LinkHub</h1>
+
   </main>
 </template>
