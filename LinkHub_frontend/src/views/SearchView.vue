@@ -148,8 +148,8 @@ export default {
 name: 'SearchView',
 
 components: {
-PeopleYouMayKnow,
-Trends,
-}
+    PeopleYouMayKnow,
+    Trends,
+    }
 }
 </script>
