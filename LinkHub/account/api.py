@@ -69,4 +69,8 @@ def handle_request(request,pk,status):
     user.friends.add(request.user)
     user.save()
     
+<<<<<<< HEAD
     return JsonResponse({'message': 'friendship request updated'})
+=======
+    return JsonResponse({'message': 'friendship request updated'})
+>>>>>>> ee27ab9202edfd74c3bf2df6928d7e965b4e4b60
