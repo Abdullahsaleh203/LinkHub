@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="bg-white border border-gray-200 rounded-lg">
-                    <a href="#" class="inline-block py-4 px-6 bg-gray-600 text-white rounded-leg">Attach Photo Here</a>
-                    <a href="#" class="inline-block py-4 px-6 bg-gray-600 text-white rounded-leg">Ok Post It</a>
+                    <a href="#" class="inline-block space-x-6 py-4 px-6 bg-blue-600 text-white rounded-leg">Attach Photo Here</a>
+                    <a href="#" class="inline-block py-4 px-6 bg-green-400 text-white rounded-leg">Ok Post It</a>
                 </div>
             </div>
 
