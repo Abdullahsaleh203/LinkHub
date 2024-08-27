@@ -108,16 +108,42 @@
 </template>
 
 <script>
+import axios from 'axios'
 import PeopleYouMayKnow from '../components/PeopleYouMayKnow.vue'
-
 import Trends from '../components/Trends.vue'
 
 export default {
-name: 'SearchView',
+    name: 'FeedView',
 
-components: {
-    PeopleYouMayKnow,
-    Trends,
+    components: {
+        PeopleYouMayKnow,
+        Trends,
+    },
+
+    data() {
+        return {
+            posts: [],
+            body: '',
+        }
+    },
+
+    mounted() {
+        this.getFeed()
+    },
+
+    methods: {
+        getFeed() {
+            axios
+                .get('/api/posts/')
+                .then(response => {
+                    console.log('data', response.data)
+
+                    this.posts = response.data
+                })
+                .catch(error => {
+                    console.log('error', error)
+                })
+        }
     }
 }
 </script>
