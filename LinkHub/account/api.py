@@ -1,7 +1,7 @@
 from django.conf import settings
 
 from django.contrib.auth.forms import PasswordChangeForm
-from django.core.mail import send_mail
+# from django.core.mail import send_mail
 
 from django.http import JsonResponse
 
@@ -42,19 +42,18 @@ def signup(request):
         user.is_active = False
         user.save()
 
-        url = f'{settings.WEBSITE_URL}/activateemail/?email={user.email}&id={user.id}'
+        # url = f'{settings.WEBSITE_URL}/activateemail/?email={user.email}&id={user.id}'
 
-        send_mail(
-            "Please verify your email",
-            f"The url for activating your account is: {url}",
-            "linkhub.com",
-            [user.email],
-            fail_silently=False,
-        )
+        # send_mail(
+        #     "Please verify your email",
+        #     f"The url for activating your account is: {url}",
+        #     "linkhub.com",
+        #     [user.email],
+        #     fail_silently=False,
+        # )
     else:
-        message = form.errors.as_json()
-    
-    print(message)
+        message = "Error: Account could not be created."
+        
     return JsonResponse({'message': message})
 
 @api_view(['GET'])
