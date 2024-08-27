@@ -1,7 +1,14 @@
+from django.conf import settings
+
 from django.contrib.auth.forms import PasswordChangeForm
+from django.core.mail import send_mail
+
 from django.http import JsonResponse
+
 from rest_framework.decorators import  permission_classes, authentication_classes ,api_view 
 from .forms import SignupForm , ProfileForm
+
+from notification.utils import create_notification
 
 from .models import  User, FriendshipRequest
 from .serializers import UserSerializer , FriendshipRequestSerializer
@@ -35,10 +42,19 @@ def signup(request):
         user.is_active = False
         user.save()
 
-        # Send verification email later
+        url = f'{settings.WEBSITE_URL}/activateemail/?email={user.email}&id={user.id}'
+
+        send_mail(
+            "Please verify your email",
+            f"The url for activating your account is: {url}",
+            "noreply@wey.com",
+            [user.email],
+            fail_silently=False,
+        )
     else:
-        message = "Error: Account could not be created."
-        
+        message = form.errors.as_json()
+    
+    print(message)
     return JsonResponse({'message': message})
 
 @api_view(['GET'])
