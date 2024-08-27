@@ -1,4 +1,5 @@
 import  uuid
+from django.conf import settings
 from django.db import models
 from django.utils.timesince import timesince
 from account.models import User 
@@ -20,8 +21,11 @@ class Comment(models.Model):
     def created_at_formatted(self):
         return timesince(self.created_at)  
     
-    def created_at_formatted(self):
-        return timesince(self.created_at)
+    def get_image(self):
+        if self.image:
+            return settings.WEBSITE_URL + self.image.url
+        else:
+            return ''
 
 
 class PostAttachment(models.Model):
