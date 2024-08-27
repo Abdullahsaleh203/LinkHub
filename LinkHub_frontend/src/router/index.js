@@ -50,6 +50,27 @@ const router = createRouter({
       name: 'chat',
       component: ChatView
     },
+    ,
+    {
+      path: '/profile/edit',
+      name: 'editprofile',
+      component: EditProfileView
+    },
+    {
+      path: '/profile/edit/password',
+      name: 'editpassword',
+      component: EditPasswordView
+    },
+    {
+      path: '/profile/:id',
+      name: 'profile',
+      component: ProfileView
+    },
+    {
+      path: '/profile/:id/friends',
+      name: 'friends',
+      component: FriendsView
+    },
     {
       path: '/about',
       name: 'about',
