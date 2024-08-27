@@ -10,7 +10,7 @@
                 </p>
 
                 <p class="font-bold">
-                    Already have an account? <RouterLink to="signin" class="underline">Click here</RouterLink> to log in!
+                    Already have an account? <RouterLink to="{'name': 'login'}" class="underline">Click here</RouterLink> to log in!
                 </p>
             </div>
         </div>

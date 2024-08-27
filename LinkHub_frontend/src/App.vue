@@ -43,6 +43,7 @@
                     <a href="#">         
                         <img src="http://i.pravatar.cc/40?img=20" class="rounded-full">
                     </a>
+
                 </div>
             </div>
         </div>
@@ -56,8 +57,7 @@
 
 <script>
     import axios from 'axios'
-    import Toast from '@/components/Toast.vue'
-    
+    import Toast from '@/components/Toast.vue' 
     import { useUserStore } from '@/stores/user'
 
 export default {
