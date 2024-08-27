@@ -21,7 +21,7 @@ def me(request):
 @permission_classes([])
 def signup(request):
     data = request.data
-    message = f"Hello, {data['user']}! Your account has been created."
+    message = "Hello,! Your account has been created."
 
     form = SignupForm({
         'email':data.get('email'),
