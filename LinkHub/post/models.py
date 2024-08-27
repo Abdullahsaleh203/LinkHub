@@ -13,12 +13,12 @@ class Comment(models.Model):
     body = models.TextField(blank=True, null=True)
     created_by = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    
-    def created_at_formatted(self):
-        return timesince(self.created_at)  
 
     class Meta:
         ordering = ('created_at',)
+    
+    def created_at_formatted(self):
+        return timesince(self.created_at)  
     
     def created_at_formatted(self):
         return timesince(self.created_at)
@@ -47,3 +47,8 @@ class Post(models.Model):
 
     def created_at_formatted(self):
         return timesince(self.created_at.name) 
+
+
+class Trend(models.Model):
+    hashtag = models.CharField(max_length=255)
+    occurences = models.IntegerField()

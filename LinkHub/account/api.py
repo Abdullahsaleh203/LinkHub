@@ -11,6 +11,8 @@ def me(request):
         'id':request.user.id,
         'name':request.user.name,
         'email':request.user.email,
+        'avatar': request.user.get_avatar()
+
     })
 
 
@@ -28,7 +30,9 @@ def signup(request):
         'password2':data.get('password2'),
         })
     if form.is_valid():
-        form.save()
+        user = form.save()
+        user.is_active = False
+        user.save()
 
         # Send verification email later
     else:
@@ -67,6 +71,11 @@ def handle_request(request,pk,status):
     friendship_request.save()
 
     user.friends.add(request.user)
+    user.friends_count = user.friends_count + 1
     user.save()
     
-    return JsonResponse({'message': 'friendship request updated'})
+    request_user = request.user
+    request_user.friends_count = request_user.friends_count + 1
+    request_user.save()
+    
+    return JsonResponse({'message': 'Friendship request updated'})
