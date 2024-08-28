@@ -1,5 +1,5 @@
 """
-URL configuration for LinkHub project.
+URL configuration for LinkHub_backend project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,17 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-
+from django.urls import path
 
 urlpatterns = [
-    path('api/', include('account.urls')),
-    path('api/posts/', include('post.urls')),
-    path('api/search/', include('search.urls')),
-    path('api/chat/', include('chat.urls')),
     path('admin/', admin.site.urls),
-    
 ]
-
-# urlpatterns = urlpatterns.static(settings.MEDIA_URL,
-# document_root=settings.MEDIA_ROOT)

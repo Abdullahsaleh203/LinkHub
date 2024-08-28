@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="bg-white border border-gray-200 rounded-lg">
-                    <a href="#" class="inline-block py-4 px-6 bg-gray-600 text-white rounded-leg">Attach Photo Here</a>
-                    <a href="#" class="inline-block py-4 px-6 bg-gray-600 text-white rounded-leg">Ok Post It</a>
+                    <a href="#" class="inline-block py-4 px-6 bg-blue-600 text-white rounded-leg">Attach Photo Here</a>
+                    <a href="#" class="inline-block py-4 px-6 bg-green-400 text-white rounded-leg">Ok Post It</a>
                 </div>
             </div>
 
@@ -35,6 +35,14 @@
                 </div>
 
                 <img src="https://unsplash.com/photos/a-stone-building-with-a-clock-tower-in-the-background-bdqdSIi1ICk" class="full rounded-leg">
+                
+                <div 
+                    class="flex space-x-6"
+                    v-for="post in posts"
+                    v-bind:key="post.id"
+                    >
+                    hiii hiiiiijj
+                </div>
                 <div class="flex space-x-6">
                     <div class="flex items-center space-x-6">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -108,16 +116,43 @@
 </template>
 
 <script>
+import axios from 'axios'
 import PeopleYouMayKnow from '../components/PeopleYouMayKnow.vue'
-
 import Trends from '../components/Trends.vue'
 
 export default {
-name: 'SearchView',
+    name: 'FeedView',
 
-components: {
-    PeopleYouMayKnow,
-    Trends,
+    components: {
+        PeopleYouMayKnow,
+        Trends,
+    },
+
+    data() {
+        return {
+            posts: [],
+            body: '',
+        }
+    },
+
+    mounted() {
+        this.getFeed()
+    },
+
+    methods: {
+        getFeed() {
+            axios
+                .get('/api/posts/')
+                .then(response => {
+                    console.log('data', response.data)
+
+                    this.posts = response.data.data
+                    console.log('data2', this.posts)
+                })
+                .catch(error => {
+                    console.log('error', error)
+                })
+        }
     }
 }
 </script>

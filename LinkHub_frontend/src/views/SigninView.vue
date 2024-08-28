@@ -93,7 +93,7 @@ export default {
 
             if (this.errors.length === 0) {
                 await axios
-                    .post('/api/signin/', this.form)
+                    .post('/api/login/', this.form)
                     .then(response => {
                         this.userStore.setToken(response.data)
 
