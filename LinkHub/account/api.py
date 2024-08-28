@@ -38,7 +38,7 @@ def signup(request):
     else:
         message = 'Error: Account could not be created.'
         
-    return JsonResponse({'message': 'message'})
+    return JsonResponse({'message': message})
 
 @api_view(['GET'])
 def friends(request, pk):
