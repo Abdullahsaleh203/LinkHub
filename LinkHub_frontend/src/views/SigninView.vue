@@ -1,8 +1,8 @@
 <template>
     <div class="max-w-7xl mx-auto grid grid-cols-2 gap-4">
         <div class="main-left">
-            <div class="p-12 bg-white border border-yellow-500 rounded-lg">
-                <h1 class="mb-6 text-2xl">SIGN IN</h1>
+            <div class="p-12 bg-white border border-gray-200 rounded-lg">
+                <h1 class="mb-6 text-2xl">Log in</h1>
 
                 <p class="mb-6 text-gray-500">
                     Lorem ipsum dolor sit mate. Lorem ipsum dolor sit mate. Lorem ipsum dolor sit mate.
@@ -10,15 +10,14 @@
                 </p>
 
                 <p class="font-bold">
-                    Don't have an account? <RouterLink to="signup" class="underline">Click here</RouterLink> to Make NEW ONE!
+                    Don't have an account? <RouterLink :to="{'name': 'signup'}" class="underline">Click here</RouterLink> to create one!
                 </p>
             </div>
         </div>
 
         <div class="main-right">
-            <div class="p-12 bg-white border border-yellow-500 rounded-lg">
+            <div class="p-12 bg-white border border-gray-200 rounded-lg">
                 <form class="space-y-6" v-on:submit.prevent="submitForm">
-
                     <div>
                         <label>E-mail</label><br>
                         <input type="email" v-model="form.email" placeholder="Your e-mail address" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
@@ -36,7 +35,7 @@
                     </template>
 
                     <div>
-                        <button class="py-4 px-6 bg-emerald-600 text-white rounded-lg">LOG IN</button>
+                        <button class="py-4 px-6 bg-purple-600 text-white rounded-lg">Log in</button>
                     </div>
                 </form>
             </div>
@@ -62,29 +61,17 @@ export default {
         return {
             form: {
                 email: '',
-                name: '',
-                password1: '',
-                password2: ''
+                password: '',
             },
-            errors: [],
+            errors: []
         }
     },
-    data() {
-        return {
-            form: {
-                email: '',
-                password: ''
-            },
-            errors: [],
-        }
-    },
-
     methods: {
         async submitForm() {
             this.errors = []
 
             if (this.form.email === '') {
-                this.errors.push('Your e-mail is Empty')
+                this.errors.push('Your e-mail is missing')
             }
 
             if (this.form.password === '') {
@@ -97,7 +84,6 @@ export default {
                     .then(response => {
                         this.userStore.setToken(response.data)
 
-                        console.log(response.data.access)
                         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.access;
                     })
                     .catch(error => {

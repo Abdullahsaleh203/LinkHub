@@ -71,7 +71,7 @@
                     <p class="text-gray-600">time minutes ago</p>
                 </div>
 
-                <p>comment from lorumepsum </p>
+                <p>comment from lorumepsum bla blaaaaa</p>
                 <div class="flex space-x-6">
                     <div class="flex items-center space-x-6">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
