@@ -7,7 +7,7 @@ class PostAttachmentSerializer(serializers.ModelSerializer):
         model = PostAttachment
         fields = ('id', 'get_image',)
 
-class PostSerializer(serializers.ModelSerializer):
+class PostAttachmentSerializer(serializers.ModelSerializer):
     create_by = UserSerializer(read_only=True)
     attachments = PostAttachmentSerializer(read_only=True, many=True)
     class Meta:
