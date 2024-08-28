@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="bg-white border border-gray-200 rounded-lg">
-                    <a href="#" class="inline-block space-x-6 py-4 px-6 bg-blue-600 text-white rounded-leg">Attach Photo Here</a>
+                    <a href="#" class="inline-block py-4 px-6 bg-blue-600 text-white rounded-leg">Attach Photo Here</a>
                     <a href="#" class="inline-block py-4 px-6 bg-green-400 text-white rounded-leg">Ok Post It</a>
                 </div>
             </div>
@@ -35,6 +35,14 @@
                 </div>
 
                 <img src="https://unsplash.com/photos/a-stone-building-with-a-clock-tower-in-the-background-bdqdSIi1ICk" class="full rounded-leg">
+                
+                <div 
+                    class="flex space-x-6"
+                    v-for="post in posts"
+                    v-bind:key="post.id"
+                    >
+                    hiii hiiiii
+                </div>
                 <div class="flex space-x-6">
                     <div class="flex items-center space-x-6">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -138,7 +146,8 @@ export default {
                 .then(response => {
                     console.log('data', response.data)
 
-                    this.posts = response.data
+                    this.posts = response.data.data
+                    console.log('data2', this.posts)
                 })
                 .catch(error => {
                     console.log('error', error)

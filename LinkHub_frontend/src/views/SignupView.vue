@@ -104,7 +104,6 @@ export default {
                 axios
                     .post('/api/signup/', this.form)
                     .then(response => {
-                        this.toastStore.setToken(response.data)
                         if (response.data.message === 'success') {
                             this.toastStore.showToast(5000, 'The user is registered. Please activate your account by clicking your email link.', 'bg-pink-500')
 
