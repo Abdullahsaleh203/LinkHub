@@ -12,7 +12,6 @@ def me(request):
         'id':request.user.id,
         'name':request.user.name,
         'email':request.user.email,
-        'avatar': request.user.get_avatar()
 
     })
 
@@ -22,7 +21,7 @@ def me(request):
 @permission_classes([])
 def signup(request):
     data = request.data
-    message = "Hello,! Your account has been created."
+    message = 'success'
 
     form = SignupForm({
         'email':data.get('email'),
@@ -37,7 +36,7 @@ def signup(request):
 
         # Send verification email later
     else:
-        message = "Error: Account could not be created."
+        message = 'Error: Account could not be created.'
         
     return JsonResponse({'message': message})
 

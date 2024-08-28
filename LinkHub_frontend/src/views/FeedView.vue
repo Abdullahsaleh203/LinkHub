@@ -41,7 +41,7 @@
                     v-for="post in posts"
                     v-bind:key="post.id"
                     >
-                    hiii hiiiii
+                    hiii hiiiiijj
                 </div>
                 <div class="flex space-x-6">
                     <div class="flex items-center space-x-6">
