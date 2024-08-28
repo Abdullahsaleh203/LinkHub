@@ -51,10 +51,12 @@ REST_FRAMEWORK = {
 }
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://link-hub-taupe.vercel.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
+    "'https://link-hub-taupe.vercel.app",
 ]
 INSTALLED_APPS = [
     'django.contrib.admin',
