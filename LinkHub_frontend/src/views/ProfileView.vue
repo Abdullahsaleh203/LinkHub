@@ -1,5 +1,15 @@
 <template>
     <div class="max-w-7xl mx-auto grid grid-cols-4 gap-4">
+        <div class="main-left col-span-1">
+            <div class="p-4 bg-white border border-gray-200 text-center rounded-lg">
+                <p><strong>{{ userStore.user.name }}</strong></p>
+
+                <div class="mt-6 flex space-x-8 justify-around">
+                    <p class="text-xs text-grey-500">count friends</p>
+                    <p class="text-xs text-grey-500">count posts</p>
+                </div>
+            </div>
+        </div>
 
         <div class="main-center col-span-3 space-y-4">
             <div class="bg-white border border-gray-200 rounded-lg">
@@ -112,10 +122,18 @@
 import axios from 'axios'
 import PeopleYouMayKnow from '../components/PeopleYouMayKnow.vue'
 import Trends from '../components/Trends.vue'
+import { useUserStore } from '@/stores/user'
 
 export default {
     name: 'FeedView',
+    setup() {
+        const userStore = useUserStore()
 
+        return {
+            userStore
+        }
+    },
+    
     components: {
         PeopleYouMayKnow,
         Trends,
@@ -135,7 +153,7 @@ export default {
     methods: {
         getFeed() {
             axios
-                .get('/api/posts/')
+                .get(`/api/posts/profile/${this.$route.params.id}/`)
                 .then(response => {
                     console.log('data', response.data)
 

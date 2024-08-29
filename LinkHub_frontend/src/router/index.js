@@ -5,6 +5,7 @@ import SigninView from '../views/SigninView.vue'
 import SearchView from '../views/SearchView.vue'
 import FeedView from '../views/FeedView.vue'
 import ChatView from '../views/ChatView.vue'
+import ProfileView from '../views/ProfileView.vue'
 
 
 const router = createRouter({
@@ -34,6 +35,11 @@ const router = createRouter({
       path: '/feed',
       name: 'feed',
       component: FeedView
+    },
+    {
+      path: '/profile/:id',
+      name: 'profile',
+      component: ProfileView
     },
     {
       path: '/chat',
